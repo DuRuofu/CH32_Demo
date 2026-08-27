@@ -14,7 +14,7 @@
 
 #include "ch32v20x.h"
 
-void SPI2_Init(void);
-void SPI2_Write(uint8_t data);
+void SPI1_Init(void);
+void SPI1_Write(uint8_t data);
 
 #endif

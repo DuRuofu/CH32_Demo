@@ -1,0 +1,13 @@
+# MounRiver Studio build output
+*/obj/
+*/.mrs/
+*/Debug/
+*/Release/
+
+# Generated binary/listing files
+*.elf
+*.hex
+*.map
+*.lst
+*.d
+*.o

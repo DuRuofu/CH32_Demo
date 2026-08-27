@@ -3,7 +3,7 @@
 /*********************************************************************
  * @fn      LCD_Init
  *
- * @brief   Initialize LCD and ST7789 controller with hardware SPI2
+ * @brief   Initialize LCD and ST7789 controller with hardware SPI1
  *
  * @return  none
  */
@@ -12,7 +12,7 @@ void LCD_Init(void)
     GPIO_InitTypeDef GPIO_InitStructure = {0};
 
     /* 使能时钟 */
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB, ENABLE);
 
     /* 初始化控制引脚: DC, CS, RST, LED */
     GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_PP;
@@ -30,8 +30,8 @@ void LCD_Init(void)
     GPIO_InitStructure.GPIO_Pin = ST7789_LED_PIN;
     GPIO_Init(ST7789_LED_PORT, &GPIO_InitStructure);
 
-    /* 初始化 SPI2 */
-    SPI2_Init();
+    /* 初始化 SPI1 */
+    SPI1_Init();
 
     /* 取消选中 LCD */
     ST7789_CS_Set();
@@ -134,7 +134,7 @@ void ST7789_WriteCommand(uint8_t cmd)
 {
     ST7789_CS_Clr();
     ST7789_DC_Clr();
-    SPI2_Write(cmd);
+    SPI1_Write(cmd);
     ST7789_CS_Set();
 }
 
@@ -151,7 +151,7 @@ void ST7789_WriteData(uint8_t data)
 {
     ST7789_CS_Clr();
     ST7789_DC_Set();
-    SPI2_Write(data);
+    SPI1_Write(data);
     ST7789_CS_Set();
 }
 
@@ -171,7 +171,7 @@ void ST7789_WriteDataArr(uint8_t *buff, size_t buff_size)
     ST7789_DC_Set();
     while(buff_size--)
     {
-        SPI2_Write(*buff);
+        SPI1_Write(*buff);
         buff++;
     }
     ST7789_CS_Set();
@@ -234,8 +234,8 @@ void LCD_Fill(uint16_t color)
     uint8_t color_bytes[2] = {(color >> 8) & 0xFF, color & 0xFF};
     for(i = 0; i < total_pixels; i++)
     {
-        SPI2_Write(color_bytes[0]);
-        SPI2_Write(color_bytes[1]);
+        SPI1_Write(color_bytes[0]);
+        SPI1_Write(color_bytes[1]);
     }
 
     ST7789_CS_Set();
@@ -262,8 +262,8 @@ void ST7789_DrawPixel(uint16_t x, uint16_t y, uint16_t color)
 
     ST7789_CS_Clr();
     ST7789_DC_Set();
-    SPI2_Write(color_bytes[0]);
-    SPI2_Write(color_bytes[1]);
+    SPI1_Write(color_bytes[0]);
+    SPI1_Write(color_bytes[1]);
     ST7789_CS_Set();
 }
 
@@ -299,8 +299,8 @@ void ST7789_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_
         uint8_t color_bytes[2] = {(color >> 8) & 0xFF, color & 0xFF};
         while(y0 <= y1)
         {
-            SPI2_Write(color_bytes[0]);
-            SPI2_Write(color_bytes[1]);
+            SPI1_Write(color_bytes[0]);
+            SPI1_Write(color_bytes[1]);
             y0++;
         }
         ST7789_CS_Set();
@@ -322,8 +322,8 @@ void ST7789_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_
         uint8_t color_bytes[2] = {(color >> 8) & 0xFF, color & 0xFF};
         while(x0 <= x1)
         {
-            SPI2_Write(color_bytes[0]);
-            SPI2_Write(color_bytes[1]);
+            SPI1_Write(color_bytes[0]);
+            SPI1_Write(color_bytes[1]);
             x0++;
         }
         ST7789_CS_Set();
@@ -442,8 +442,8 @@ void ST7789_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint
 
     while(total_pixels--)
     {
-        SPI2_Write(*(p+1));  // 低字节在前 (little-endian)
-        SPI2_Write(*p);       // 高字节在后
+        SPI1_Write(*(p+1));  // 低字节在前 (little-endian)
+        SPI1_Write(*p);       // 高字节在后
         p += 2;
     }
 

@@ -66,8 +66,8 @@
     #endif
 #endif
 
-/* 硬件连接 - 使用 SPI2 (参考官方示例)
- * SCK: PB13, MOSI: PB15, MISO: PB14
+/* 硬件连接 - 使用 SPI1
+ * SCK: PA5, MOSI: PA7, MISO: PA6
  * CS: PB12, DC: PB10, RST: PB11, LED: PB9
  */
 #define ST7789_DC_PORT   GPIOB

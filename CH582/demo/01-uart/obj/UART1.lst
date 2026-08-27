@@ -1,0 +1,2223 @@
+
+UART1.elf:     file format elf32-littleriscv
+UART1.elf
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+    LOAD off    0x00001000 vaddr 0x00000000 paddr 0x00000000 align 2**12
+         filesz 0x00000004 memsz 0x00000004 flags r-x
+    LOAD off    0x00002000 vaddr 0x20000000 paddr 0x00000004 align 2**12
+         filesz 0x00000aa8 memsz 0x00000aa8 flags r-x
+    LOAD off    0x00002aac vaddr 0x00000aac paddr 0x00000aac align 2**12
+         filesz 0x000002e8 memsz 0x000002e8 flags r-x
+    LOAD off    0x00003aa8 vaddr 0x20000aa8 paddr 0x00000d94 align 2**12
+         filesz 0x00000018 memsz 0x00000084 flags rw-
+    LOAD off    0x00003e00 vaddr 0x20007e00 paddr 0x20007e00 align 2**12
+         filesz 0x00000000 memsz 0x00000200 flags rw-
+
+Sections:
+Idx Name            Size      VMA       LMA       File off  Algn  Flags
+  0 .init           00000004  00000000  00000000  00001000  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .highcodelalign 00000000  00000004  00000004  00003ac0  2**0  CONTENTS
+  2 .highcode       00000aa8  20000000  00000004  00002000  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .text           000002e8  00000aac  00000aac  00002aac  2**2  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  4 .fini           00000000  00000d94  00000d94  00003ac0  2**0  CONTENTS, ALLOC, LOAD, CODE
+  5 .dlalign        00000000  00000d94  00000d94  00003ac0  2**0  CONTENTS
+  6 .data           00000018  20000aa8  00000d94  00003aa8  2**2  CONTENTS, ALLOC, LOAD, DATA
+  7 .bss            0000006c  20000ac0  00000dac  00003ac0  2**2  ALLOC
+  8 .stack          00000200  20007e00  20007e00  00003e00  2**0  ALLOC
+  9 .debug_info     00004623  00000000  00000000  00003ac0  2**0  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_abbrev   00000c15  00000000  00000000  000080e3  2**0  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc      00000c3e  00000000  00000000  00008cf8  2**0  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_aranges  00000180  00000000  00000000  00009938  2**3  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges   00000168  00000000  00000000  00009ab8  2**3  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_line     00002f3b  00000000  00000000  00009c20  2**0  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_str      00000f6c  00000000  00000000  0000cb5b  2**0  CONTENTS, READONLY, DEBUGGING
+ 16 .comment        00000033  00000000  00000000  0000dac7  2**0  CONTENTS, READONLY
+ 17 .debug_frame    00000274  00000000  00000000  0000dafc  2**2  CONTENTS, READONLY, DEBUGGING
+ 18 .stabstr        00000117  00000000  00000000  0000dd70  2**0  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+00000000 l    d  .init	00000000 .init
+00000004 l    d  .highcodelalign	00000000 .highcodelalign
+20000000 l    d  .highcode	00000000 .highcode
+00000aac l    d  .text	00000000 .text
+00000d94 l    d  .fini	00000000 .fini
+00000d94 l    d  .dlalign	00000000 .dlalign
+20000aa8 l    d  .data	00000000 .data
+20000ac0 l    d  .bss	00000000 .bss
+20007e00 l    d  .stack	00000000 .stack
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .stabstr	00000000 .stabstr
+00000000 l    df *ABS*	00000000 ./Startup/startup_CH583.o
+20000000 l       .highcode	00000000 _vector_base
+00000000 l    df *ABS*	00000000 Main.c
+00000000 l    df *ABS*	00000000 CH58x_sys.c
+00000000 l    df *ABS*	00000000 ISP583.c
+20000692 l       .highcode	00000000 .loop18
+200006a0 l       .highcode	00000000 .loop29
+200006ae l       .highcode	00000000 .loop40
+2000093a l       .highcode	00000000 .loop402
+00000000 l    df *ABS*	00000000 CH58x_gpio.c
+00000000 l    df *ABS*	00000000 CH58x_uart1.c
+00000000 l    df *ABS*	00000000 close.c
+00000d2c g     F .text	00000028 UART1_SendString
+200006ae g     F .highcode	0000000e FLASH_ROM_OUT
+200012c0 g       .data	00000000 __global_pointer$
+2000064a g     F .highcode	0000000e mDelayuS
+20000578  w    F .highcode	000000d2 HardFault_Handler
+20000090  w      .highcode	00000000 GPIOB_IRQHandler
+20000090  w      .highcode	00000000 GPIOA_IRQHandler
+20000090  w      .highcode	00000000 SysTick_Handler
+00000d54 g     F .text	0000002a UART1_RecvString
+20000090  w      .highcode	00000000 NMI_Handler
+20000092 g     F .highcode	0000009a UART1_IRQHandler
+20000ac0 g       .bss	00000000 _sbss
+00000200 g       *ABS*	00000000 __stack_size
+200006a0 g     F .highcode	0000000e FLASH_ROM_IN
+20000090  w      .highcode	00000000 UART0_IRQHandler
+00000004 g       .init	00000000 _einit
+20000090  w      .highcode	00000000 BB_IRQHandler
+2000073c g     F .highcode	0000036a FLASH_EEPROM_CMD
+20000090  w      .highcode	00000000 Break_Point_Handler
+20000090  w      .highcode	00000000 TMR0_IRQHandler
+20000680 g     F .highcode	00000012 FLASH_ROM_BEG
+20000658 g     F .highcode	00000028 mDelaymS
+20000090  w      .highcode	00000000 Ecall_M_Mode_Handler
+20007e00 g       .stack	00000000 _heap_end
+200006bc g     F .highcode	00000048 FLASH_ROM_ADDR
+20000090  w      .highcode	00000000 RTC_IRQHandler
+20000b2c g       .bss	00000000 _ebss
+00000cfa g     F .text	00000032 UART1_DefInit
+20000704 g     F .highcode	00000038 FLASH_ROM_WAIT
+20000090  w      .highcode	00000000 UART2_IRQHandler
+20000090  w      .highcode	00000000 PWMX_IRQHandler
+00000000 g       .init	00000000 _start
+20000090  w      .highcode	00000000 ADC_IRQHandler
+20000000 g       .highcode	00000000 _highcode_vma_start
+20000090  w      .highcode	00000000 TMR2_IRQHandler
+20000ac4 g     O .bss	00000004 IRQ_STA
+20000aa8 g       .data	00000000 _data_vma
+2000012c g     F .highcode	000003ce SetSysClock
+20000090  w      .highcode	00000000 USB_IRQHandler
+20000090  w      .highcode	00000000 I2C_IRQHandler
+00000b8a g     F .text	00000058 main
+20000ac0 g     O .bss	00000001 trigB
+20000090  w      .highcode	00000000 USB2_IRQHandler
+00000004 g       .highcodelalign	00000000 _highcode_lma
+20000090  w      .highcode	00000000 LLE_IRQHandler
+00000000 g       .init	00000000 _sinit
+20000090  w      .highcode	00000000 WDOG_BAT_IRQHandler
+20000090  w      .highcode	00000000 Ecall_U_Mode_Handler
+20000ac8 g     O .bss	00000064 RxBuff
+20000090  w      .highcode	00000000 TMR3_IRQHandler
+20008000 g       .stack	00000000 _eusrstack
+20000090  w      .highcode	00000000 SW_Handler
+00000be2 g     F .text	000000a6 GPIOA_ModeCfg
+00000c88 g     F .text	00000042 GetSysClock
+20000ac0 g       .data	00000000 _edata
+20000090  w      .highcode	00000000 SPI0_IRQHandler
+20000b2c g       .bss	00000000 _end
+20000aa8 g       .highcode	00000000 _highcode_vma_end
+00000d94 g       .dlalign	00000000 _data_lma
+20000aa8 g     O .data	00000014 TxBuff
+00000aac  w      .text	00000000 handle_reset
+20000090  w      .highcode	00000000 UART3_IRQHandler
+20000692 g     F .highcode	0000000e FLASH_ROM_END
+20000090  w      .highcode	00000000 TMR1_IRQHandler
+200004fa g     F .highcode	0000007e SYS_ResetExecute
+00000cca g     F .text	00000030 UART1_BaudRateCfg
+
+
+
+Disassembly of section .init:
+
+00000000 <_sinit>:
+_start():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:17
+
+	.section	.init,"ax",@progbits
+	.global	_start
+	.align	1
+_start:
+	j	handle_reset
+   0:	2ad0006f          	j	aac <handle_reset>
+
+Disassembly of section .highcode:
+
+20000000 <_highcode_vma_start>:
+	...
+_vector_base():
+20000008:	0090                	addi	a2,sp,64
+2000000a:	2000                	fld	fs0,0(s0)
+2000000c:	0578                	addi	a4,sp,652
+2000000e:	2000                	fld	fs0,0(s0)
+20000010:	bda9                	j	1ffffe6a <_data_lma+0x1ffff0d6>
+20000012:	f3f9                	bnez	a5,1fffffd8 <_data_lma+0x1ffff244>
+20000014:	0090                	addi	a2,sp,64
+20000016:	2000                	fld	fs0,0(s0)
+	...
+20000020:	0090                	addi	a2,sp,64
+20000022:	2000                	fld	fs0,0(s0)
+20000024:	0090                	addi	a2,sp,64
+20000026:	2000                	fld	fs0,0(s0)
+	...
+20000030:	0090                	addi	a2,sp,64
+20000032:	2000                	fld	fs0,0(s0)
+20000034:	0000                	unimp
+20000036:	0000                	unimp
+20000038:	0090                	addi	a2,sp,64
+2000003a:	2000                	fld	fs0,0(s0)
+2000003c:	0000                	unimp
+2000003e:	0000                	unimp
+20000040:	0090                	addi	a2,sp,64
+20000042:	2000                	fld	fs0,0(s0)
+20000044:	0090                	addi	a2,sp,64
+20000046:	2000                	fld	fs0,0(s0)
+20000048:	0090                	addi	a2,sp,64
+2000004a:	2000                	fld	fs0,0(s0)
+2000004c:	0090                	addi	a2,sp,64
+2000004e:	2000                	fld	fs0,0(s0)
+20000050:	0090                	addi	a2,sp,64
+20000052:	2000                	fld	fs0,0(s0)
+20000054:	0090                	addi	a2,sp,64
+20000056:	2000                	fld	fs0,0(s0)
+20000058:	0090                	addi	a2,sp,64
+2000005a:	2000                	fld	fs0,0(s0)
+2000005c:	0090                	addi	a2,sp,64
+2000005e:	2000                	fld	fs0,0(s0)
+20000060:	0090                	addi	a2,sp,64
+20000062:	2000                	fld	fs0,0(s0)
+20000064:	0090                	addi	a2,sp,64
+20000066:	2000                	fld	fs0,0(s0)
+20000068:	0090                	addi	a2,sp,64
+2000006a:	2000                	fld	fs0,0(s0)
+2000006c:	0092                	slli	ra,ra,0x4
+2000006e:	2000                	fld	fs0,0(s0)
+20000070:	0090                	addi	a2,sp,64
+20000072:	2000                	fld	fs0,0(s0)
+20000074:	0090                	addi	a2,sp,64
+20000076:	2000                	fld	fs0,0(s0)
+20000078:	0090                	addi	a2,sp,64
+2000007a:	2000                	fld	fs0,0(s0)
+2000007c:	0090                	addi	a2,sp,64
+2000007e:	2000                	fld	fs0,0(s0)
+20000080:	0090                	addi	a2,sp,64
+20000082:	2000                	fld	fs0,0(s0)
+20000084:	0090                	addi	a2,sp,64
+20000086:	2000                	fld	fs0,0(s0)
+20000088:	0090                	addi	a2,sp,64
+2000008a:	2000                	fld	fs0,0(s0)
+2000008c:	0090                	addi	a2,sp,64
+2000008e:	2000                	fld	fs0,0(s0)
+
+20000090 <ADC_IRQHandler>:
+GPIOB_IRQHandler():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:121
+TMR3_IRQHandler:
+UART2_IRQHandler:
+UART3_IRQHandler:
+WDOG_BAT_IRQHandler: 
+1:  
+	j 1b
+20000090:	a001                	j	20000090 <ADC_IRQHandler>
+
+20000092 <UART1_IRQHandler>:
+UART1_IRQHandler():
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:78
+__HIGH_CODE
+void UART1_IRQHandler(void)
+{
+    volatile uint8_t i;
+
+    switch(UART1_GetITFlag())
+20000092:	40003737          	lui	a4,0x40003
+20000096:	40474783          	lbu	a5,1028(a4) # 40003404 <_eusrstack+0x1fffb404>
+2000009a:	4699                	li	a3,6
+2000009c:	8bbd                	andi	a5,a5,15
+2000009e:	02d78a63          	beq	a5,a3,200000d2 <UART1_IRQHandler+0x40>
+200000a2:	4731                	li	a4,12
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:75
+{
+200000a4:	1141                	addi	sp,sp,-16
+200000a6:	06e78063          	beq	a5,a4,20000106 <UART1_IRQHandler+0x74>
+200000aa:	4711                	li	a4,4
+200000ac:	02e79063          	bne	a5,a4,200000cc <UART1_IRQHandler+0x3a>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:87
+            UART1_GetLinSTA();
+            break;
+        }
+
+        case UART_II_RECV_RDY: // 数据达到设置触发点
+            for(i = 0; i != trigB; i++)
+200000b0:	000107a3          	sb	zero,15(sp)
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:89
+            {
+                RxBuff[i] = UART1_RecvByte();
+200000b4:	40003737          	lui	a4,0x40003
+200000b8:	80818693          	addi	a3,gp,-2040 # 20000ac8 <RxBuff>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:87 (discriminator 1)
+            for(i = 0; i != trigB; i++)
+200000bc:	00f14783          	lbu	a5,15(sp)
+200000c0:	00001617          	auipc	a2,0x1
+200000c4:	a0064603          	lbu	a2,-1536(a2) # 20000ac0 <_edata>
+200000c8:	00f61963          	bne	a2,a5,200000da <UART1_IRQHandler+0x48>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:108
+            break;
+
+        default:
+            break;
+    }
+}
+200000cc:	0141                	addi	sp,sp,16
+200000ce:	30200073          	mret
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:82
+            UART1_GetLinSTA();
+200000d2:	40574783          	lbu	a5,1029(a4) # 40003405 <_eusrstack+0x1fffb405>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:83
+            break;
+200000d6:	30200073          	mret
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:89 (discriminator 3)
+                RxBuff[i] = UART1_RecvByte();
+200000da:	00f14783          	lbu	a5,15(sp)
+200000de:	40874603          	lbu	a2,1032(a4)
+200000e2:	97b6                	add	a5,a5,a3
+200000e4:	00c78023          	sb	a2,0(a5)
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:90 (discriminator 3)
+                UART1_SendByte(RxBuff[i]);
+200000e8:	00f14783          	lbu	a5,15(sp)
+200000ec:	97b6                	add	a5,a5,a3
+200000ee:	0007c783          	lbu	a5,0(a5)
+200000f2:	40f70423          	sb	a5,1032(a4)
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:87 (discriminator 3)
+            for(i = 0; i != trigB; i++)
+200000f6:	00f14783          	lbu	a5,15(sp)
+200000fa:	0785                	addi	a5,a5,1
+200000fc:	0ff7f793          	andi	a5,a5,255
+20000100:	00f107a3          	sb	a5,15(sp)
+20000104:	bf65                	j	200000bc <UART1_IRQHandler+0x2a>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:95
+            i = UART1_RecvString(RxBuff);
+20000106:	80818513          	addi	a0,gp,-2040 # 20000ac8 <RxBuff>
+2000010a:	e0001097          	auipc	ra,0xe0001
+2000010e:	c4a080e7          	jalr	-950(ra) # d54 <UART1_RecvString>
+20000112:	0ff57513          	andi	a0,a0,255
+20000116:	00a107a3          	sb	a0,15(sp)
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:96
+            UART1_SendString(RxBuff, i);
+2000011a:	00f14583          	lbu	a1,15(sp)
+2000011e:	80818513          	addi	a0,gp,-2040 # 20000ac8 <RxBuff>
+20000122:	e0001097          	auipc	ra,0xe0001
+20000126:	c0a080e7          	jalr	-1014(ra) # d2c <UART1_SendString>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:108
+}
+2000012a:	b74d                	j	200000cc <UART1_IRQHandler+0x3a>
+
+2000012c <SetSysClock>:
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+ * within the valid period. The safe mode will be automatically 
+ * terminated after the above validity period is exceeded.
+ */
+ __attribute__((always_inline)) static inline void sys_safe_access_enable(void)
+{
+   if(read_csr(0x800)&0x08)
+2000012c:	80002773          	csrr	a4,0x800
+20000130:	8b21                	andi	a4,a4,8
+20000132:	00001797          	auipc	a5,0x1
+20000136:	99278793          	addi	a5,a5,-1646 # 20000ac4 <IRQ_STA>
+2000013a:	cb19                	beqz	a4,20000150 <SetSysClock+0x24>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+   {
+       IRQ_STA = read_csr(0x800);
+2000013c:	80002773          	csrr	a4,0x800
+20000140:	00001697          	auipc	a3,0x1
+20000144:	98e6a223          	sw	a4,-1660(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+20000148:	4398                	lw	a4,0(a5)
+2000014a:	9b5d                	andi	a4,a4,-9
+2000014c:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   }
+   SAFEOPERATE;
+20000150:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000154:	40001737          	lui	a4,0x40001
+20000158:	05700693          	li	a3,87
+2000015c:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+20000160:	fa800693          	li	a3,-88
+20000164:	04d70023          	sb	a3,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+20000168:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:30
+__HIGH_CODE
+void SetSysClock(SYS_CLKTypeDef sc)
+{
+    uint32_t i;
+    sys_safe_access_enable();
+    R8_PLL_CONFIG &= ~(1 << 5); //
+2000016c:	04b74683          	lbu	a3,75(a4)
+20000170:	0df6f693          	andi	a3,a3,223
+20000174:	04d705a3          	sb	a3,75(a4)
+sys_safe_access_disable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:195
+}
+
+__attribute__((always_inline)) static inline void sys_safe_access_disable(void)
+{
+   R8_SAFE_ACCESS_SIG = 0;
+20000178:	04070023          	sb	zero,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+2000017c:	80002673          	csrr	a2,0x800
+20000180:	4394                	lw	a3,0(a5)
+20000182:	8aa1                	andi	a3,a3,8
+20000184:	8ed1                	or	a3,a3,a2
+20000186:	80069073          	csrw	0x800,a3
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+2000018a:	00001697          	auipc	a3,0x1
+2000018e:	9206ad23          	sw	zero,-1734(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+20000192:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:32
+    sys_safe_access_disable();
+    if(sc & 0x20)
+20000196:	02057693          	andi	a3,a0,32
+2000019a:	1a068463          	beqz	a3,20000342 <SetSysClock+0x216>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:34
+    { // HSE div
+        if(!(R8_HFCK_PWR_CTRL & RB_CLK_XT32M_PON))
+2000019e:	00a74703          	lbu	a4,10(a4)
+200001a2:	8b11                	andi	a4,a4,4
+200001a4:	eb25                	bnez	a4,20000214 <SetSysClock+0xe8>
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+200001a6:	80002773          	csrr	a4,0x800
+200001aa:	8b21                	andi	a4,a4,8
+200001ac:	cb19                	beqz	a4,200001c2 <SetSysClock+0x96>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+200001ae:	80002773          	csrr	a4,0x800
+200001b2:	00001697          	auipc	a3,0x1
+200001b6:	90e6a923          	sw	a4,-1774(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+200001ba:	4398                	lw	a4,0(a5)
+200001bc:	9b5d                	andi	a4,a4,-9
+200001be:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+200001c2:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200001c6:	40001737          	lui	a4,0x40001
+200001ca:	05700693          	li	a3,87
+200001ce:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200001d2:	fa800693          	li	a3,-88
+200001d6:	04d70023          	sb	a3,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+200001da:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:37
+        {
+            sys_safe_access_enable();
+            R8_HFCK_PWR_CTRL |= RB_CLK_XT32M_PON; // HSE power on
+200001de:	00a74683          	lbu	a3,10(a4)
+200001e2:	0046e693          	ori	a3,a3,4
+200001e6:	00d70523          	sb	a3,10(a4)
+sys_safe_access_disable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+200001ea:	04070023          	sb	zero,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+200001ee:	800026f3          	csrr	a3,0x800
+200001f2:	4398                	lw	a4,0(a5)
+200001f4:	8b21                	andi	a4,a4,8
+200001f6:	8f55                	or	a4,a4,a3
+200001f8:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+200001fc:	00001717          	auipc	a4,0x1
+20000200:	8c072423          	sw	zero,-1848(a4) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+20000204:	0000100f          	fence.i
+20000208:	4b000713          	li	a4,1200
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:41 (discriminator 3)
+            sys_safe_access_disable();
+            for(i = 0; i < 1200; i++)
+            {
+                __nop();
+2000020c:	0001                	nop
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:42 (discriminator 3)
+                __nop();
+2000020e:	0001                	nop
+20000210:	177d                	addi	a4,a4,-1
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:39 (discriminator 3)
+            for(i = 0; i < 1200; i++)
+20000212:	ff6d                	bnez	a4,2000020c <SetSysClock+0xe0>
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+20000214:	80002773          	csrr	a4,0x800
+20000218:	8b21                	andi	a4,a4,8
+2000021a:	cb19                	beqz	a4,20000230 <SetSysClock+0x104>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+2000021c:	80002773          	csrr	a4,0x800
+20000220:	00001697          	auipc	a3,0x1
+20000224:	8ae6a223          	sw	a4,-1884(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+20000228:	4398                	lw	a4,0(a5)
+2000022a:	9b5d                	andi	a4,a4,-9
+2000022c:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+20000230:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000234:	40001737          	lui	a4,0x40001
+20000238:	05700693          	li	a3,87
+2000023c:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+20000240:	fa800693          	li	a3,-88
+20000244:	04d70023          	sb	a3,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+20000248:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:47
+            }
+        }
+
+        sys_safe_access_enable();
+        R16_CLK_SYS_CFG = (0 << 6) | (sc & 0x1f);
+2000024c:	897d                	andi	a0,a0,31
+2000024e:	00a71423          	sh	a0,8(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:48
+        __nop();
+20000252:	0001                	nop
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:49
+        __nop();
+20000254:	0001                	nop
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:50
+        __nop();
+20000256:	0001                	nop
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:51
+        __nop();
+20000258:	0001                	nop
+sys_safe_access_disable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+2000025a:	04070023          	sb	zero,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+2000025e:	800026f3          	csrr	a3,0x800
+20000262:	4398                	lw	a4,0(a5)
+20000264:	8b21                	andi	a4,a4,8
+20000266:	8f55                	or	a4,a4,a3
+20000268:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+2000026c:	00001717          	auipc	a4,0x1
+20000270:	84072c23          	sw	zero,-1960(a4) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+20000274:	0000100f          	fence.i
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+20000278:	80002773          	csrr	a4,0x800
+2000027c:	8b21                	andi	a4,a4,8
+2000027e:	cb19                	beqz	a4,20000294 <SetSysClock+0x168>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+20000280:	80002773          	csrr	a4,0x800
+20000284:	00001697          	auipc	a3,0x1
+20000288:	84e6a023          	sw	a4,-1984(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+2000028c:	4398                	lw	a4,0(a5)
+2000028e:	9b5d                	andi	a4,a4,-9
+20000290:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+20000294:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000298:	40001737          	lui	a4,0x40001
+2000029c:	05700693          	li	a3,87
+200002a0:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200002a4:	fa800693          	li	a3,-88
+200002a8:	04d70023          	sb	a3,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+200002ac:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:54
+        sys_safe_access_disable();
+        sys_safe_access_enable();
+        SAFEOPERATE;
+200002b0:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:55
+        R8_FLASH_CFG = 0X51;
+200002b4:	400026b7          	lui	a3,0x40002
+200002b8:	05100613          	li	a2,81
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:88
+            sys_safe_access_disable();
+        }
+        else
+        {
+            sys_safe_access_enable();
+            R8_FLASH_CFG = 0X52;
+200002bc:	80c683a3          	sb	a2,-2041(a3) # 40001807 <_eusrstack+0x1fff9807>
+sys_safe_access_disable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+200002c0:	04070023          	sb	zero,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+200002c4:	800026f3          	csrr	a3,0x800
+200002c8:	4398                	lw	a4,0(a5)
+200002ca:	8b21                	andi	a4,a4,8
+200002cc:	8f55                	or	a4,a4,a3
+200002ce:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+200002d2:	00000717          	auipc	a4,0x0
+200002d6:	7e072923          	sw	zero,2034(a4) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+200002da:	0000100f          	fence.i
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+200002de:	80002773          	csrr	a4,0x800
+200002e2:	8b21                	andi	a4,a4,8
+200002e4:	cb19                	beqz	a4,200002fa <SetSysClock+0x1ce>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+200002e6:	80002773          	csrr	a4,0x800
+200002ea:	00000697          	auipc	a3,0x0
+200002ee:	7ce6ad23          	sw	a4,2010(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+200002f2:	4398                	lw	a4,0(a5)
+200002f4:	9b5d                	andi	a4,a4,-9
+200002f6:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+200002fa:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200002fe:	40001737          	lui	a4,0x40001
+20000302:	05700693          	li	a3,87
+20000306:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+2000030a:	fa800693          	li	a3,-88
+2000030e:	04d70023          	sb	a3,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+20000312:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:100
+        R16_CLK_SYS_CFG |= RB_CLK_SYS_MOD;
+        sys_safe_access_disable();
+    }
+    //更改FLASH clk的驱动能力
+    sys_safe_access_enable();
+    R8_PLL_CONFIG |= 1 << 7;
+20000316:	04b74683          	lbu	a3,75(a4)
+2000031a:	0806e693          	ori	a3,a3,128
+2000031e:	04d705a3          	sb	a3,75(a4)
+sys_safe_access_disable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+20000322:	04070023          	sb	zero,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+20000326:	80002773          	csrr	a4,0x800
+2000032a:	439c                	lw	a5,0(a5)
+2000032c:	8ba1                	andi	a5,a5,8
+2000032e:	8fd9                	or	a5,a5,a4
+20000330:	80079073          	csrw	0x800,a5
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+20000334:	00000797          	auipc	a5,0x0
+20000338:	7807a823          	sw	zero,1936(a5) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+2000033c:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:102
+    sys_safe_access_disable();
+}
+20000340:	8082                	ret
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:59
+    else if(sc & 0x40)
+20000342:	04057693          	andi	a3,a0,64
+20000346:	16068763          	beqz	a3,200004b4 <SetSysClock+0x388>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:61
+        if(!(R8_HFCK_PWR_CTRL & RB_CLK_PLL_PON))
+2000034a:	00a74703          	lbu	a4,10(a4)
+2000034e:	8b41                	andi	a4,a4,16
+20000350:	eb25                	bnez	a4,200003c0 <SetSysClock+0x294>
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+20000352:	80002773          	csrr	a4,0x800
+20000356:	8b21                	andi	a4,a4,8
+20000358:	cb19                	beqz	a4,2000036e <SetSysClock+0x242>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+2000035a:	80002773          	csrr	a4,0x800
+2000035e:	00000697          	auipc	a3,0x0
+20000362:	76e6a323          	sw	a4,1894(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+20000366:	4398                	lw	a4,0(a5)
+20000368:	9b5d                	andi	a4,a4,-9
+2000036a:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+2000036e:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000372:	40001737          	lui	a4,0x40001
+20000376:	05700693          	li	a3,87
+2000037a:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+2000037e:	fa800693          	li	a3,-88
+20000382:	04d70023          	sb	a3,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+20000386:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:64
+            R8_HFCK_PWR_CTRL |= RB_CLK_PLL_PON; // PLL power on
+2000038a:	00a74683          	lbu	a3,10(a4)
+2000038e:	0106e693          	ori	a3,a3,16
+20000392:	00d70523          	sb	a3,10(a4)
+sys_safe_access_disable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+20000396:	04070023          	sb	zero,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+2000039a:	800026f3          	csrr	a3,0x800
+2000039e:	4398                	lw	a4,0(a5)
+200003a0:	8b21                	andi	a4,a4,8
+200003a2:	8f55                	or	a4,a4,a3
+200003a4:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+200003a8:	00000717          	auipc	a4,0x0
+200003ac:	70072e23          	sw	zero,1820(a4) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+200003b0:	0000100f          	fence.i
+200003b4:	7d000713          	li	a4,2000
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:68 (discriminator 3)
+                __nop();
+200003b8:	0001                	nop
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:69 (discriminator 3)
+                __nop();
+200003ba:	0001                	nop
+200003bc:	177d                	addi	a4,a4,-1
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:66 (discriminator 3)
+            for(i = 0; i < 2000; i++)
+200003be:	ff6d                	bnez	a4,200003b8 <SetSysClock+0x28c>
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+200003c0:	80002773          	csrr	a4,0x800
+200003c4:	8b21                	andi	a4,a4,8
+200003c6:	cb19                	beqz	a4,200003dc <SetSysClock+0x2b0>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+200003c8:	80002773          	csrr	a4,0x800
+200003cc:	00000697          	auipc	a3,0x0
+200003d0:	6ee6ac23          	sw	a4,1784(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+200003d4:	4398                	lw	a4,0(a5)
+200003d6:	9b5d                	andi	a4,a4,-9
+200003d8:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+200003dc:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200003e0:	40001737          	lui	a4,0x40001
+200003e4:	05700693          	li	a3,87
+200003e8:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200003ec:	fa800693          	li	a3,-88
+200003f0:	04d70023          	sb	a3,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+200003f4:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:73
+        R16_CLK_SYS_CFG = (1 << 6) | (sc & 0x1f);
+200003f8:	01f57693          	andi	a3,a0,31
+200003fc:	0406e693          	ori	a3,a3,64
+20000400:	00d71423          	sh	a3,8(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:74
+        __nop();
+20000404:	0001                	nop
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:75
+        __nop();
+20000406:	0001                	nop
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:76
+        __nop();
+20000408:	0001                	nop
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:77
+        __nop();
+2000040a:	0001                	nop
+sys_safe_access_disable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+2000040c:	04070023          	sb	zero,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+20000410:	800026f3          	csrr	a3,0x800
+20000414:	4398                	lw	a4,0(a5)
+20000416:	8b21                	andi	a4,a4,8
+20000418:	8f55                	or	a4,a4,a3
+2000041a:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+2000041e:	00000717          	auipc	a4,0x0
+20000422:	6a072323          	sw	zero,1702(a4) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+20000426:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:79
+        if(sc == CLK_SOURCE_PLL_80MHz)
+2000042a:	04600713          	li	a4,70
+2000042e:	04e51263          	bne	a0,a4,20000472 <SetSysClock+0x346>
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+20000432:	80002773          	csrr	a4,0x800
+20000436:	8b21                	andi	a4,a4,8
+20000438:	cb19                	beqz	a4,2000044e <SetSysClock+0x322>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+2000043a:	80002773          	csrr	a4,0x800
+2000043e:	00000697          	auipc	a3,0x0
+20000442:	68e6a323          	sw	a4,1670(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+20000446:	4398                	lw	a4,0(a5)
+20000448:	9b5d                	andi	a4,a4,-9
+2000044a:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+2000044e:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000452:	40001737          	lui	a4,0x40001
+20000456:	05700693          	li	a3,87
+2000045a:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+2000045e:	fa800693          	li	a3,-88
+20000462:	04d70023          	sb	a3,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+20000466:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:82
+            R8_FLASH_CFG = 0X02;
+2000046a:	400026b7          	lui	a3,0x40002
+2000046e:	4609                	li	a2,2
+20000470:	b5b1                	j	200002bc <SetSysClock+0x190>
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+20000472:	80002773          	csrr	a4,0x800
+20000476:	8b21                	andi	a4,a4,8
+20000478:	cb19                	beqz	a4,2000048e <SetSysClock+0x362>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+2000047a:	80002773          	csrr	a4,0x800
+2000047e:	00000697          	auipc	a3,0x0
+20000482:	64e6a323          	sw	a4,1606(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+20000486:	4398                	lw	a4,0(a5)
+20000488:	9b5d                	andi	a4,a4,-9
+2000048a:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+2000048e:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000492:	40001737          	lui	a4,0x40001
+20000496:	05700693          	li	a3,87
+2000049a:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+2000049e:	fa800693          	li	a3,-88
+200004a2:	04d70023          	sb	a3,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+200004a6:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:88
+            R8_FLASH_CFG = 0X52;
+200004aa:	400026b7          	lui	a3,0x40002
+200004ae:	05200613          	li	a2,82
+200004b2:	b529                	j	200002bc <SetSysClock+0x190>
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+200004b4:	80002773          	csrr	a4,0x800
+200004b8:	8b21                	andi	a4,a4,8
+200004ba:	cb19                	beqz	a4,200004d0 <SetSysClock+0x3a4>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+200004bc:	80002773          	csrr	a4,0x800
+200004c0:	00000697          	auipc	a3,0x0
+200004c4:	60e6a223          	sw	a4,1540(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+200004c8:	4398                	lw	a4,0(a5)
+200004ca:	9b5d                	andi	a4,a4,-9
+200004cc:	80071073          	csrw	0x800,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+200004d0:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200004d4:	40001737          	lui	a4,0x40001
+200004d8:	05700693          	li	a3,87
+200004dc:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200004e0:	fa800693          	li	a3,-88
+200004e4:	04d70023          	sb	a3,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+200004e8:	0000100f          	fence.i
+SetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:95
+        R16_CLK_SYS_CFG |= RB_CLK_SYS_MOD;
+200004ec:	00875683          	lhu	a3,8(a4)
+200004f0:	0c06e693          	ori	a3,a3,192
+200004f4:	00d71423          	sh	a3,8(a4)
+200004f8:	b3e1                	j	200002c0 <SetSysClock+0x194>
+
+200004fa <SYS_ResetExecute>:
+SYS_ResetExecute():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:164
+ *
+ * @return  none
+ */
+__HIGH_CODE
+void SYS_ResetExecute(void)
+{
+200004fa:	1141                	addi	sp,sp,-16
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:165
+    FLASH_ROM_SW_RESET();
+200004fc:	4681                	li	a3,0
+200004fe:	4601                	li	a2,0
+20000500:	4581                	li	a1,0
+20000502:	4511                	li	a0,4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:164
+{
+20000504:	c606                	sw	ra,12(sp)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:165
+    FLASH_ROM_SW_RESET();
+20000506:	2c1d                	jal	2000073c <FLASH_EEPROM_CMD>
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+20000508:	800027f3          	csrr	a5,0x800
+2000050c:	8ba1                	andi	a5,a5,8
+2000050e:	00000697          	auipc	a3,0x0
+20000512:	5b668693          	addi	a3,a3,1462 # 20000ac4 <IRQ_STA>
+20000516:	cb99                	beqz	a5,2000052c <SYS_ResetExecute+0x32>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+20000518:	800027f3          	csrr	a5,0x800
+2000051c:	00000717          	auipc	a4,0x0
+20000520:	5af72423          	sw	a5,1448(a4) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+20000524:	429c                	lw	a5,0(a3)
+20000526:	9bdd                	andi	a5,a5,-9
+20000528:	80079073          	csrw	0x800,a5
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+2000052c:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000530:	400017b7          	lui	a5,0x40001
+20000534:	05700713          	li	a4,87
+20000538:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+2000053c:	fa800713          	li	a4,-88
+20000540:	04e78023          	sb	a4,64(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+20000544:	0000100f          	fence.i
+SYS_ResetExecute():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:167
+    sys_safe_access_enable();
+    R8_RST_WDOG_CTRL |= RB_SOFTWARE_RESET;
+20000548:	0467c703          	lbu	a4,70(a5)
+2000054c:	00176713          	ori	a4,a4,1
+20000550:	04e78323          	sb	a4,70(a5)
+sys_safe_access_disable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+20000554:	04078023          	sb	zero,64(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+20000558:	80002773          	csrr	a4,0x800
+2000055c:	429c                	lw	a5,0(a3)
+2000055e:	8ba1                	andi	a5,a5,8
+20000560:	8fd9                	or	a5,a5,a4
+20000562:	80079073          	csrw	0x800,a5
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+20000566:	00000797          	auipc	a5,0x0
+2000056a:	5407af23          	sw	zero,1374(a5) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+2000056e:	0000100f          	fence.i
+SYS_ResetExecute():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:169
+    sys_safe_access_disable();
+}
+20000572:	40b2                	lw	ra,12(sp)
+20000574:	0141                	addi	sp,sp,16
+20000576:	8082                	ret
+
+20000578 <HardFault_Handler>:
+HardFault_Handler():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:304
+__INTERRUPT
+__HIGH_CODE
+__attribute__((weak))
+void HardFault_Handler(void)
+{
+    FLASH_ROM_SW_RESET();
+20000578:	4681                	li	a3,0
+2000057a:	4601                	li	a2,0
+2000057c:	4581                	li	a1,0
+2000057e:	4511                	li	a0,4
+20000580:	2a75                	jal	2000073c <FLASH_EEPROM_CMD>
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+20000582:	800027f3          	csrr	a5,0x800
+20000586:	8ba1                	andi	a5,a5,8
+20000588:	00000717          	auipc	a4,0x0
+2000058c:	53c70713          	addi	a4,a4,1340 # 20000ac4 <IRQ_STA>
+20000590:	cb99                	beqz	a5,200005a6 <HardFault_Handler+0x2e>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+20000592:	800027f3          	csrr	a5,0x800
+20000596:	00000697          	auipc	a3,0x0
+2000059a:	52f6a723          	sw	a5,1326(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+2000059e:	431c                	lw	a5,0(a4)
+200005a0:	9bdd                	andi	a5,a5,-9
+200005a2:	80079073          	csrw	0x800,a5
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+200005a6:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200005aa:	400017b7          	lui	a5,0x40001
+200005ae:	05700693          	li	a3,87
+200005b2:	04d78023          	sb	a3,64(a5) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200005b6:	fa800693          	li	a3,-88
+200005ba:	04d78023          	sb	a3,64(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+200005be:	0000100f          	fence.i
+HardFault_Handler():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:306
+    sys_safe_access_enable();
+    R16_INT32K_TUNE = 0xFFFF;
+200005c2:	56fd                	li	a3,-1
+200005c4:	02d79623          	sh	a3,44(a5)
+sys_safe_access_disable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+200005c8:	04078023          	sb	zero,64(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+200005cc:	800026f3          	csrr	a3,0x800
+200005d0:	431c                	lw	a5,0(a4)
+200005d2:	8ba1                	andi	a5,a5,8
+200005d4:	8fd5                	or	a5,a5,a3
+200005d6:	80079073          	csrw	0x800,a5
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+200005da:	00000797          	auipc	a5,0x0
+200005de:	4e07a523          	sw	zero,1258(a5) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+200005e2:	0000100f          	fence.i
+sys_safe_access_enable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:182
+   if(read_csr(0x800)&0x08)
+200005e6:	800027f3          	csrr	a5,0x800
+200005ea:	8ba1                	andi	a5,a5,8
+200005ec:	cb99                	beqz	a5,20000602 <HardFault_Handler+0x8a>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:184
+       IRQ_STA = read_csr(0x800);
+200005ee:	800027f3          	csrr	a5,0x800
+200005f2:	00000697          	auipc	a3,0x0
+200005f6:	4cf6a923          	sw	a5,1234(a3) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:185
+       write_csr(0x800, (IRQ_STA&(~0x08)));
+200005fa:	431c                	lw	a5,0(a4)
+200005fc:	9bdd                	andi	a5,a5,-9
+200005fe:	80079073          	csrw	0x800,a5
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:187
+   SAFEOPERATE;
+20000602:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:188
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000606:	400017b7          	lui	a5,0x40001
+2000060a:	05700693          	li	a3,87
+2000060e:	04d78023          	sb	a3,64(a5) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:189
+   R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+20000612:	fa800693          	li	a3,-88
+20000616:	04d78023          	sb	a3,64(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:190
+   SAFEOPERATE;
+2000061a:	0000100f          	fence.i
+HardFault_Handler():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:309
+	sys_safe_access_disable();
+    sys_safe_access_enable();
+    R8_RST_WDOG_CTRL |= RB_SOFTWARE_RESET;
+2000061e:	0467c683          	lbu	a3,70(a5)
+20000622:	0016e693          	ori	a3,a3,1
+20000626:	04d78323          	sb	a3,70(a5)
+sys_safe_access_disable():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:195
+   R8_SAFE_ACCESS_SIG = 0;
+2000062a:	04078023          	sb	zero,64(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:196
+   write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+2000062e:	800026f3          	csrr	a3,0x800
+20000632:	431c                	lw	a5,0(a4)
+20000634:	8ba1                	andi	a5,a5,8
+20000636:	8fd5                	or	a5,a5,a3
+20000638:	80079073          	csrw	0x800,a5
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:197
+   IRQ_STA = 0;
+2000063c:	00000797          	auipc	a5,0x0
+20000640:	4807a423          	sw	zero,1160(a5) # 20000ac4 <IRQ_STA>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/inc/CH58x_sys.h:198
+   SAFEOPERATE;
+20000644:	0000100f          	fence.i
+HardFault_Handler():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:311 (discriminator 1)
+    sys_safe_access_disable();
+    while(1);
+20000648:	a001                	j	20000648 <HardFault_Handler+0xd0>
+
+2000064a <mDelayuS>:
+mDelayuS():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:330
+{
+    uint32_t i;
+#if(FREQ_SYS == 80000000)
+    i = t * 20;
+#elif(FREQ_SYS == 60000000)
+    i = t * 15;
+2000064a:	47bd                	li	a5,15
+2000064c:	02f50533          	mul	a0,a0,a5
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:354 (discriminator 1)
+#else
+    i = t << 1;
+#endif
+    do
+    {
+        __nop();
+20000650:	0001                	nop
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:355 (discriminator 1)
+    } while(--i);
+20000652:	157d                	addi	a0,a0,-1
+20000654:	fd75                	bnez	a0,20000650 <mDelayuS+0x6>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:356
+}
+20000656:	8082                	ret
+
+20000658 <mDelaymS>:
+mDelaymS():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:369
+ *
+ * @return  none
+ */
+__HIGH_CODE
+void mDelaymS(uint16_t t)
+{
+20000658:	1141                	addi	sp,sp,-16
+2000065a:	c422                	sw	s0,8(sp)
+2000065c:	c226                	sw	s1,4(sp)
+2000065e:	c606                	sw	ra,12(sp)
+20000660:	84aa                	mv	s1,a0
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:372
+    uint16_t i;
+
+    for(i = 0; i < t; i++)
+20000662:	4401                	li	s0,0
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:372 (discriminator 1)
+20000664:	00941763          	bne	s0,s1,20000672 <mDelaymS+0x1a>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:376
+    {
+        mDelayuS(1000);
+    }
+}
+20000668:	40b2                	lw	ra,12(sp)
+2000066a:	4422                	lw	s0,8(sp)
+2000066c:	4492                	lw	s1,4(sp)
+2000066e:	0141                	addi	sp,sp,16
+20000670:	8082                	ret
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:372 (discriminator 3)
+    for(i = 0; i < t; i++)
+20000672:	0405                	addi	s0,s0,1
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:374 (discriminator 3)
+        mDelayuS(1000);
+20000674:	3e800513          	li	a0,1000
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:372 (discriminator 3)
+    for(i = 0; i < t; i++)
+20000678:	0442                	slli	s0,s0,0x10
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:374 (discriminator 3)
+        mDelayuS(1000);
+2000067a:	3fc1                	jal	2000064a <mDelayuS>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:372 (discriminator 3)
+    for(i = 0; i < t; i++)
+2000067c:	8041                	srli	s0,s0,0x10
+2000067e:	b7dd                	j	20000664 <mDelaymS+0xc>
+
+20000680 <FLASH_ROM_BEG>:
+FLASH_ROM_BEG():
+20000680:	80040323          	sb	zero,-2042(s0)
+20000684:	4715                	li	a4,5
+20000686:	80e40323          	sb	a4,-2042(s0)
+2000068a:	0001                	nop
+2000068c:	80a40223          	sb	a0,-2044(s0)
+20000690:	8082                	ret
+
+20000692 <FLASH_ROM_END>:
+FLASH_ROM_END():
+20000692:	80640783          	lb	a5,-2042(s0)
+20000696:	fe07cee3          	bltz	a5,20000692 <FLASH_ROM_END>
+2000069a:	80040323          	sb	zero,-2042(s0)
+2000069e:	8082                	ret
+
+200006a0 <FLASH_ROM_IN>:
+FLASH_ROM_IN():
+200006a0:	80640783          	lb	a5,-2042(s0)
+200006a4:	fe07cee3          	bltz	a5,200006a0 <FLASH_ROM_IN>
+200006a8:	80444503          	lbu	a0,-2044(s0)
+200006ac:	8082                	ret
+
+200006ae <FLASH_ROM_OUT>:
+FLASH_ROM_OUT():
+200006ae:	80640783          	lb	a5,-2042(s0)
+200006b2:	fe07cee3          	bltz	a5,200006ae <FLASH_ROM_OUT>
+200006b6:	80a40223          	sb	a0,-2044(s0)
+200006ba:	8082                	ret
+
+200006bc <FLASH_ROM_ADDR>:
+FLASH_ROM_ADDR():
+200006bc:	1141                	addi	sp,sp,-16
+200006be:	c426                	sw	s1,8(sp)
+200006c0:	c24a                	sw	s2,4(sp)
+200006c2:	c04e                	sw	s3,0(sp)
+200006c4:	c606                	sw	ra,12(sp)
+200006c6:	0bf57713          	andi	a4,a0,191
+200006ca:	47ad                	li	a5,11
+200006cc:	89aa                	mv	s3,a0
+200006ce:	892e                	mv	s2,a1
+200006d0:	4495                	li	s1,5
+200006d2:	00f70663          	beq	a4,a5,200006de <FLASH_ROM_ADDR+0x22>
+200006d6:	4519                	li	a0,6
+200006d8:	3765                	jal	20000680 <FLASH_ROM_BEG>
+200006da:	3f65                	jal	20000692 <FLASH_ROM_END>
+200006dc:	448d                	li	s1,3
+200006de:	854e                	mv	a0,s3
+200006e0:	3745                	jal	20000680 <FLASH_ROM_BEG>
+200006e2:	59fd                	li	s3,-1
+200006e4:	14fd                	addi	s1,s1,-1
+200006e6:	01349863          	bne	s1,s3,200006f6 <FLASH_ROM_ADDR+0x3a>
+200006ea:	40b2                	lw	ra,12(sp)
+200006ec:	44a2                	lw	s1,8(sp)
+200006ee:	4912                	lw	s2,4(sp)
+200006f0:	4982                	lw	s3,0(sp)
+200006f2:	0141                	addi	sp,sp,16
+200006f4:	8082                	ret
+200006f6:	01095513          	srli	a0,s2,0x10
+200006fa:	0ff57513          	andi	a0,a0,255
+200006fe:	3f45                	jal	200006ae <FLASH_ROM_OUT>
+20000700:	0922                	slli	s2,s2,0x8
+20000702:	b7cd                	j	200006e4 <FLASH_ROM_ADDR+0x28>
+
+20000704 <FLASH_ROM_WAIT>:
+FLASH_ROM_WAIT():
+20000704:	1101                	addi	sp,sp,-32
+20000706:	cc26                	sw	s1,24(sp)
+20000708:	ce06                	sw	ra,28(sp)
+2000070a:	000804b7          	lui	s1,0x80
+2000070e:	3751                	jal	20000692 <FLASH_ROM_END>
+20000710:	4515                	li	a0,5
+20000712:	37bd                	jal	20000680 <FLASH_ROM_BEG>
+20000714:	3771                	jal	200006a0 <FLASH_ROM_IN>
+20000716:	3769                	jal	200006a0 <FLASH_ROM_IN>
+20000718:	c62a                	sw	a0,12(sp)
+2000071a:	3fa5                	jal	20000692 <FLASH_ROM_END>
+2000071c:	4532                	lw	a0,12(sp)
+2000071e:	00157793          	andi	a5,a0,1
+20000722:	eb89                	bnez	a5,20000734 <FLASH_ROM_WAIT+0x30>
+20000724:	00156513          	ori	a0,a0,1
+20000728:	0ff57513          	andi	a0,a0,255
+2000072c:	40f2                	lw	ra,28(sp)
+2000072e:	44e2                	lw	s1,24(sp)
+20000730:	6105                	addi	sp,sp,32
+20000732:	8082                	ret
+20000734:	14fd                	addi	s1,s1,-1
+20000736:	fce9                	bnez	s1,20000710 <FLASH_ROM_WAIT+0xc>
+20000738:	4501                	li	a0,0
+2000073a:	bfcd                	j	2000072c <FLASH_ROM_WAIT+0x28>
+
+2000073c <FLASH_EEPROM_CMD>:
+FLASH_EEPROM_CMD():
+2000073c:	7139                	addi	sp,sp,-64
+2000073e:	dc26                	sw	s1,56(sp)
+20000740:	da4a                	sw	s2,52(sp)
+20000742:	d84e                	sw	s3,48(sp)
+20000744:	d652                	sw	s4,44(sp)
+20000746:	d456                	sw	s5,40(sp)
+20000748:	d25a                	sw	s6,36(sp)
+2000074a:	d05e                	sw	s7,32(sp)
+2000074c:	de06                	sw	ra,60(sp)
+2000074e:	ce62                	sw	s8,28(sp)
+20000750:	cc66                	sw	s9,24(sp)
+20000752:	e000e7b7          	lui	a5,0xe000e
+20000756:	577d                	li	a4,-1
+20000758:	0007aa83          	lw	s5,0(a5) # e000e000 <_eusrstack+0xc0006000>
+2000075c:	c622                	sw	s0,12(sp)
+2000075e:	0047aa03          	lw	s4,4(a5)
+20000762:	18e7a023          	sw	a4,384(a5)
+20000766:	18e7a223          	sw	a4,388(a5)
+2000076a:	400017b7          	lui	a5,0x40001
+2000076e:	05700713          	li	a4,87
+20000772:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fff9040>
+20000776:	fa800713          	li	a4,-88
+2000077a:	04e78023          	sb	a4,64(a5)
+2000077e:	0447c783          	lbu	a5,68(a5)
+20000782:	ff750b93          	addi	s7,a0,-9
+20000786:	84b6                	mv	s1,a3
+20000788:	07e2                	slli	a5,a5,0x18
+2000078a:	0ffbfb93          	andi	s7,s7,255
+2000078e:	4685                	li	a3,1
+20000790:	89aa                	mv	s3,a0
+20000792:	8b2e                	mv	s6,a1
+20000794:	8932                	mv	s2,a2
+20000796:	40002437          	lui	s0,0x40002
+2000079a:	87e1                	srai	a5,a5,0x18
+2000079c:	5701                	li	a4,-32
+2000079e:	0176fa63          	bgeu	a3,s7,200007b2 <FLASH_EEPROM_CMD+0x76>
+200007a2:	00d50863          	beq	a0,a3,200007b2 <FLASH_EEPROM_CMD+0x76>
+200007a6:	4689                	li	a3,2
+200007a8:	02000713          	li	a4,32
+200007ac:	00d51363          	bne	a0,a3,200007b2 <FLASH_EEPROM_CMD+0x76>
+200007b0:	5701                	li	a4,-32
+200007b2:	8fd9                	or	a5,a5,a4
+200007b4:	0ff7f793          	andi	a5,a5,255
+200007b8:	40001cb7          	lui	s9,0x40001
+200007bc:	04fc8223          	sb	a5,68(s9) # 40001044 <_eusrstack+0x1fff9044>
+200007c0:	4711                	li	a4,4
+200007c2:	80e40323          	sb	a4,-2042(s0) # 40001806 <_eusrstack+0x1fff9806>
+200007c6:	0ff00513          	li	a0,255
+200007ca:	3d5d                	jal	20000680 <FLASH_ROM_BEG>
+200007cc:	4c09                	li	s8,2
+200007ce:	35d1                	jal	20000692 <FLASH_ROM_END>
+200007d0:	117c6d63          	bltu	s8,s7,200008ea <FLASH_EEPROM_CMD+0x1ae>
+200007d4:	000705b7          	lui	a1,0x70
+200007d8:	95da                	add	a1,a1,s6
+200007da:	00078737          	lui	a4,0x78
+200007de:	5579                	li	a0,-2
+200007e0:	04e5f263          	bgeu	a1,a4,20000824 <FLASH_EEPROM_CMD+0xe8>
+200007e4:	009587b3          	add	a5,a1,s1
+200007e8:	02f76e63          	bltu	a4,a5,20000824 <FLASH_EEPROM_CMD+0xe8>
+200007ec:	00080b37          	lui	s6,0x80
+200007f0:	47a9                	li	a5,10
+200007f2:	0165eb33          	or	s6,a1,s6
+200007f6:	06f99963          	bne	s3,a5,20000868 <FLASH_EEPROM_CMD+0x12c>
+200007fa:	e489                	bnez	s1,20000804 <FLASH_EEPROM_CMD+0xc8>
+200007fc:	4481                	li	s1,0
+200007fe:	3d51                	jal	20000692 <FLASH_ROM_END>
+20000800:	8526                	mv	a0,s1
+20000802:	a00d                	j	20000824 <FLASH_EEPROM_CMD+0xe8>
+20000804:	85da                	mv	a1,s6
+20000806:	4509                	li	a0,2
+20000808:	3d55                	jal	200006bc <FLASH_ROM_ADDR>
+2000080a:	0905                	addi	s2,s2,1
+2000080c:	fff94503          	lbu	a0,-1(s2)
+20000810:	14fd                	addi	s1,s1,-1
+20000812:	0b05                	addi	s6,s6,1
+20000814:	3d69                	jal	200006ae <FLASH_ROM_OUT>
+20000816:	c481                	beqz	s1,2000081e <FLASH_EEPROM_CMD+0xe2>
+20000818:	0ffb7793          	andi	a5,s6,255
+2000081c:	f7fd                	bnez	a5,2000080a <FLASH_EEPROM_CMD+0xce>
+2000081e:	35dd                	jal	20000704 <FLASH_ROM_WAIT>
+20000820:	fd69                	bnez	a0,200007fa <FLASH_EEPROM_CMD+0xbe>
+20000822:	557d                	li	a0,-1
+20000824:	400017b7          	lui	a5,0x40001
+20000828:	05700713          	li	a4,87
+2000082c:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fff9040>
+20000830:	fa800713          	li	a4,-88
+20000834:	04e78023          	sb	a4,64(a5)
+20000838:	0447c703          	lbu	a4,68(a5)
+2000083c:	8b41                	andi	a4,a4,16
+2000083e:	04e78223          	sb	a4,68(a5)
+20000842:	50f2                	lw	ra,60(sp)
+20000844:	e000e7b7          	lui	a5,0xe000e
+20000848:	1157a023          	sw	s5,256(a5) # e000e100 <_eusrstack+0xc0006100>
+2000084c:	1147a223          	sw	s4,260(a5)
+20000850:	54e2                	lw	s1,56(sp)
+20000852:	4432                	lw	s0,12(sp)
+20000854:	5952                	lw	s2,52(sp)
+20000856:	59c2                	lw	s3,48(sp)
+20000858:	5a32                	lw	s4,44(sp)
+2000085a:	5aa2                	lw	s5,40(sp)
+2000085c:	5b12                	lw	s6,36(sp)
+2000085e:	5b82                	lw	s7,32(sp)
+20000860:	4c72                	lw	s8,28(sp)
+20000862:	4ce2                	lw	s9,24(sp)
+20000864:	6121                	addi	sp,sp,64
+20000866:	8082                	ret
+20000868:	47a5                	li	a5,9
+2000086a:	06f99563          	bne	s3,a5,200008d4 <FLASH_EEPROM_CMD+0x198>
+2000086e:	6985                	lui	s3,0x1
+20000870:	0ff00913          	li	s2,255
+20000874:	009906b3          	add	a3,s2,s1
+20000878:	012b74b3          	and	s1,s6,s2
+2000087c:	94b6                	add	s1,s1,a3
+2000087e:	fff94913          	not	s2,s2
+20000882:	009974b3          	and	s1,s2,s1
+20000886:	6b85                	lui	s7,0x1
+20000888:	01697933          	and	s2,s2,s6
+2000088c:	6b41                	lui	s6,0x10
+2000088e:	fff98793          	addi	a5,s3,-1 # fff <_data_lma+0x26b>
+20000892:	0127f7b3          	and	a5,a5,s2
+20000896:	e399                	bnez	a5,2000089c <FLASH_EEPROM_CMD+0x160>
+20000898:	0134fc63          	bgeu	s1,s3,200008b0 <FLASH_EEPROM_CMD+0x174>
+2000089c:	0049d993          	srli	s3,s3,0x4
+200008a0:	47c1                	li	a5,16
+200008a2:	ff37e6e3          	bltu	a5,s3,2000088e <FLASH_EEPROM_CMD+0x152>
+200008a6:	bf99                	j	200007fc <FLASH_EEPROM_CMD+0xc0>
+200008a8:	6905                	lui	s2,0x1
+200008aa:	69c1                	lui	s3,0x10
+200008ac:	197d                	addi	s2,s2,-1
+200008ae:	b7d9                	j	20000874 <FLASH_EEPROM_CMD+0x138>
+200008b0:	0d800513          	li	a0,216
+200008b4:	01698863          	beq	s3,s6,200008c4 <FLASH_EEPROM_CMD+0x188>
+200008b8:	02000513          	li	a0,32
+200008bc:	01798463          	beq	s3,s7,200008c4 <FLASH_EEPROM_CMD+0x188>
+200008c0:	08100513          	li	a0,129
+200008c4:	85ca                	mv	a1,s2
+200008c6:	3bdd                	jal	200006bc <FLASH_ROM_ADDR>
+200008c8:	3d35                	jal	20000704 <FLASH_ROM_WAIT>
+200008ca:	dd21                	beqz	a0,20000822 <FLASH_EEPROM_CMD+0xe6>
+200008cc:	994e                	add	s2,s2,s3
+200008ce:	413484b3          	sub	s1,s1,s3
+200008d2:	b7d9                	j	20000898 <FLASH_EEPROM_CMD+0x15c>
+200008d4:	85da                	mv	a1,s6
+200008d6:	452d                	li	a0,11
+200008d8:	33d5                	jal	200006bc <FLASH_ROM_ADDR>
+200008da:	94ca                	add	s1,s1,s2
+200008dc:	f29900e3          	beq	s2,s1,200007fc <FLASH_EEPROM_CMD+0xc0>
+200008e0:	0905                	addi	s2,s2,1
+200008e2:	3b7d                	jal	200006a0 <FLASH_ROM_IN>
+200008e4:	fea90fa3          	sb	a0,-1(s2) # fff <_data_lma+0x26b>
+200008e8:	bfd5                	j	200008dc <FLASH_EEPROM_CMD+0x1a0>
+200008ea:	fff98793          	addi	a5,s3,-1 # ffff <_data_lma+0xf26b>
+200008ee:	0ff7f793          	andi	a5,a5,255
+200008f2:	0cfc6163          	bltu	s8,a5,200009b4 <.loop402+0x7a>
+200008f6:	041cc783          	lbu	a5,65(s9)
+200008fa:	08300713          	li	a4,131
+200008fe:	04f71f63          	bne	a4,a5,2000095c <.loop402+0x22>
+20000902:	00080737          	lui	a4,0x80
+20000906:	04eb6b63          	bltu	s6,a4,2000095c <.loop402+0x22>
+2000090a:	009b07b3          	add	a5,s6,s1
+2000090e:	001006b7          	lui	a3,0x100
+20000912:	04d7f563          	bgeu	a5,a3,2000095c <.loop402+0x22>
+20000916:	00eb4b33          	xor	s6,s6,a4
+2000091a:	4789                	li	a5,2
+2000091c:	06f99363          	bne	s3,a5,20000982 <.loop402+0x48>
+20000920:	8089                	srli	s1,s1,0x2
+20000922:	49d5                	li	s3,21
+20000924:	ec048ce3          	beqz	s1,200007fc <FLASH_EEPROM_CMD+0xc0>
+20000928:	85da                	mv	a1,s6
+2000092a:	4509                	li	a0,2
+2000092c:	3b41                	jal	200006bc <FLASH_ROM_ADDR>
+2000092e:	0911                	addi	s2,s2,4
+20000930:	ffc92703          	lw	a4,-4(s2)
+20000934:	4791                	li	a5,4
+20000936:	80e42023          	sw	a4,-2048(s0)
+
+2000093a <.loop402>:
+2000093a:	80640703          	lb	a4,-2042(s0)
+2000093e:	fe074ee3          	bltz	a4,2000093a <.loop402>
+20000942:	81340323          	sb	s3,-2042(s0)
+20000946:	17fd                	addi	a5,a5,-1
+20000948:	fbed                	bnez	a5,2000093a <.loop402>
+2000094a:	14fd                	addi	s1,s1,-1
+2000094c:	0b11                	addi	s6,s6,4
+2000094e:	c481                	beqz	s1,20000956 <.loop402+0x1c>
+20000950:	0ffb7793          	andi	a5,s6,255
+20000954:	ffe9                	bnez	a5,2000092e <FLASH_EEPROM_CMD+0x1f2>
+20000956:	337d                	jal	20000704 <FLASH_ROM_WAIT>
+20000958:	f571                	bnez	a0,20000924 <FLASH_EEPROM_CMD+0x1e8>
+2000095a:	b5e1                	j	20000822 <FLASH_EEPROM_CMD+0xe6>
+2000095c:	400017b7          	lui	a5,0x40001
+20000960:	0457c703          	lbu	a4,69(a5) # 40001045 <_eusrstack+0x1fff9045>
+20000964:	000807b7          	lui	a5,0x80
+20000968:	02077713          	andi	a4,a4,32
+2000096c:	e319                	bnez	a4,20000972 <.loop402+0x38>
+2000096e:	000787b7          	lui	a5,0x78
+20000972:	5579                	li	a0,-2
+20000974:	eafb78e3          	bgeu	s6,a5,20000824 <FLASH_EEPROM_CMD+0xe8>
+20000978:	009b0733          	add	a4,s6,s1
+2000097c:	f8e7ffe3          	bgeu	a5,a4,2000091a <FLASH_EEPROM_CMD+0x1de>
+20000980:	b555                	j	20000824 <FLASH_EEPROM_CMD+0xe8>
+20000982:	4785                	li	a5,1
+20000984:	f2f982e3          	beq	s3,a5,200008a8 <FLASH_EEPROM_CMD+0x16c>
+20000988:	85da                	mv	a1,s6
+2000098a:	452d                	li	a0,11
+2000098c:	3b05                	jal	200006bc <FLASH_ROM_ADDR>
+2000098e:	fff48993          	addi	s3,s1,-1 # 7ffff <_data_lma+0x7f26b>
+20000992:	e60485e3          	beqz	s1,200007fc <FLASH_EEPROM_CMD+0xc0>
+20000996:	3329                	jal	200006a0 <FLASH_ROM_IN>
+20000998:	0039f793          	andi	a5,s3,3
+2000099c:	eb91                	bnez	a5,200009b0 <.loop402+0x76>
+2000099e:	80042683          	lw	a3,-2048(s0)
+200009a2:	00092703          	lw	a4,0(s2)
+200009a6:	00490793          	addi	a5,s2,4
+200009aa:	e4e69ae3          	bne	a3,a4,200007fe <FLASH_EEPROM_CMD+0xc2>
+200009ae:	893e                	mv	s2,a5
+200009b0:	84ce                	mv	s1,s3
+200009b2:	bff1                	j	2000098e <.loop402+0x54>
+200009b4:	47b5                	li	a5,13
+200009b6:	00f99663          	bne	s3,a5,200009c2 <.loop402+0x88>
+200009ba:	0b900513          	li	a0,185
+200009be:	31c9                	jal	20000680 <FLASH_ROM_BEG>
+200009c0:	bd35                	j	200007fc <FLASH_EEPROM_CMD+0xc0>
+200009c2:	47b1                	li	a5,12
+200009c4:	0ab00513          	li	a0,171
+200009c8:	fef98be3          	beq	s3,a5,200009be <.loop402+0x84>
+200009cc:	4799                	li	a5,6
+200009ce:	04f99163          	bne	s3,a5,20000a10 <.loop402+0xd6>
+200009d2:	000805b7          	lui	a1,0x80
+200009d6:	00bb65b3          	or	a1,s6,a1
+200009da:	452d                	li	a0,11
+200009dc:	31c5                	jal	200006bc <FLASH_ROM_ADDR>
+200009de:	4481                	li	s1,0
+200009e0:	4b8d                	li	s7,3
+200009e2:	49a1                	li	s3,8
+200009e4:	3975                	jal	200006a0 <FLASH_ROM_IN>
+200009e6:	01749663          	bne	s1,s7,200009f2 <.loop402+0xb8>
+200009ea:	80042783          	lw	a5,-2048(s0)
+200009ee:	00f92023          	sw	a5,0(s2)
+200009f2:	0485                	addi	s1,s1,1
+200009f4:	ff3498e3          	bne	s1,s3,200009e4 <.loop402+0xaa>
+200009f8:	80042783          	lw	a5,-2048(s0)
+200009fc:	012b1713          	slli	a4,s6,0x12
+20000a00:	00075563          	bgez	a4,20000a0a <.loop402+0xd0>
+20000a04:	00f91223          	sh	a5,4(s2)
+20000a08:	bbd5                	j	200007fc <FLASH_EEPROM_CMD+0xc0>
+20000a0a:	00f92223          	sw	a5,4(s2)
+20000a0e:	b3fd                	j	200007fc <FLASH_EEPROM_CMD+0xc0>
+20000a10:	479d                	li	a5,7
+20000a12:	02f99963          	bne	s3,a5,20000a44 <.loop402+0x10a>
+20000a16:	4581                	li	a1,0
+20000a18:	04b00513          	li	a0,75
+20000a1c:	3145                	jal	200006bc <FLASH_ROM_ADDR>
+20000a1e:	44bd                	li	s1,15
+20000a20:	00092023          	sw	zero,0(s2)
+20000a24:	00092223          	sw	zero,4(s2)
+20000a28:	59fd                	li	s3,-1
+20000a2a:	399d                	jal	200006a0 <FLASH_ROM_IN>
+20000a2c:	0074f793          	andi	a5,s1,7
+20000a30:	97ca                	add	a5,a5,s2
+20000a32:	0007c703          	lbu	a4,0(a5) # 78000 <_data_lma+0x7726c>
+20000a36:	14fd                	addi	s1,s1,-1
+20000a38:	8d39                	xor	a0,a0,a4
+20000a3a:	00a78023          	sb	a0,0(a5)
+20000a3e:	ff3496e3          	bne	s1,s3,20000a2a <.loop402+0xf0>
+20000a42:	bb6d                	j	200007fc <FLASH_EEPROM_CMD+0xc0>
+20000a44:	47a1                	li	a5,8
+20000a46:	04f99263          	bne	s3,a5,20000a8a <.loop402+0x150>
+20000a4a:	396d                	jal	20000704 <FLASH_ROM_WAIT>
+20000a4c:	4481                	li	s1,0
+20000a4e:	000b0d63          	beqz	s6,20000a68 <.loop402+0x12e>
+20000a52:	478d                	li	a5,3
+20000a54:	03c00493          	li	s1,60
+20000a58:	00fb0863          	beq	s6,a5,20000a68 <.loop402+0x12e>
+20000a5c:	05000493          	li	s1,80
+20000a60:	018b0463          	beq	s6,s8,20000a68 <.loop402+0x12e>
+20000a64:	04400493          	li	s1,68
+20000a68:	07c57513          	andi	a0,a0,124
+20000a6c:	d89508e3          	beq	a0,s1,200007fc <FLASH_EEPROM_CMD+0xc0>
+20000a70:	4519                	li	a0,6
+20000a72:	3139                	jal	20000680 <FLASH_ROM_BEG>
+20000a74:	3939                	jal	20000692 <FLASH_ROM_END>
+20000a76:	4505                	li	a0,1
+20000a78:	3121                	jal	20000680 <FLASH_ROM_BEG>
+20000a7a:	8526                	mv	a0,s1
+20000a7c:	390d                	jal	200006ae <FLASH_ROM_OUT>
+20000a7e:	4509                	li	a0,2
+20000a80:	313d                	jal	200006ae <FLASH_ROM_OUT>
+20000a82:	3149                	jal	20000704 <FLASH_ROM_WAIT>
+20000a84:	d6051ce3          	bnez	a0,200007fc <FLASH_EEPROM_CMD+0xc0>
+20000a88:	bb69                	j	20000822 <FLASH_EEPROM_CMD+0xe6>
+20000a8a:	4791                	li	a5,4
+20000a8c:	00f99963          	bne	s3,a5,20000a9e <.loop402+0x164>
+20000a90:	06600513          	li	a0,102
+20000a94:	36f5                	jal	20000680 <FLASH_ROM_BEG>
+20000a96:	3ef5                	jal	20000692 <FLASH_ROM_END>
+20000a98:	09900513          	li	a0,153
+20000a9c:	b70d                	j	200009be <.loop402+0x84>
+20000a9e:	d4098fe3          	beqz	s3,200007fc <FLASH_EEPROM_CMD+0xc0>
+20000aa2:	54f1                	li	s1,-4
+20000aa4:	bba9                	j	200007fe <FLASH_EEPROM_CMD+0xc2>
+	...
+
+Disassembly of section .text:
+
+00000aac <handle_reset>:
+handle_reset():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:129
+	.weak	handle_reset
+	.align	1
+handle_reset:
+.option push 
+.option	norelax 
+	la gp, __global_pointer$
+ aac:	20001197          	auipc	gp,0x20001
+ ab0:	81418193          	addi	gp,gp,-2028 # 200012c0 <__global_pointer$>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:132
+.option	pop 
+1:
+	la sp, _eusrstack 
+ ab4:	20007117          	auipc	sp,0x20007
+ ab8:	54c10113          	addi	sp,sp,1356 # 20008000 <_eusrstack>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:136
+
+/* Load highcode code  section from flash to RAM */
+2:
+    la a0, _highcode_lma
+ abc:	00400513          	li	a0,4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:137
+    la a1, _highcode_vma_start
+ ac0:	1ffff597          	auipc	a1,0x1ffff
+ ac4:	54058593          	addi	a1,a1,1344 # 20000000 <_highcode_vma_start>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:138
+    la a2, _highcode_vma_end
+ ac8:	20000617          	auipc	a2,0x20000
+ acc:	fe060613          	addi	a2,a2,-32 # 20000aa8 <_highcode_vma_end>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:139
+    bgeu a1, a2, 2f
+ ad0:	00c5fa63          	bgeu	a1,a2,ae4 <handle_reset+0x38>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:141
+1:
+    lw t0, (a0)
+ ad4:	00052283          	lw	t0,0(a0)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:142
+    sw t0, (a1)
+ ad8:	0055a023          	sw	t0,0(a1)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:143
+    addi a0, a0, 4
+ adc:	0511                	addi	a0,a0,4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:144
+    addi a1, a1, 4
+ ade:	0591                	addi	a1,a1,4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:145
+    bltu a1, a2, 1b
+ ae0:	fec5eae3          	bltu	a1,a2,ad4 <handle_reset+0x28>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:149
+
+/* Load data section from flash to RAM */
+2:
+	la a0, _data_lma
+ ae4:	00000517          	auipc	a0,0x0
+ ae8:	2b050513          	addi	a0,a0,688 # d94 <_data_lma>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:150
+	la a1, _data_vma
+ aec:	20000597          	auipc	a1,0x20000
+ af0:	fbc58593          	addi	a1,a1,-68 # 20000aa8 <_highcode_vma_end>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:151
+	la a2, _edata
+ af4:	20000617          	auipc	a2,0x20000
+ af8:	fcc60613          	addi	a2,a2,-52 # 20000ac0 <_edata>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:152
+	bgeu a1, a2, 2f
+ afc:	00c5fa63          	bgeu	a1,a2,b10 <handle_reset+0x64>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:154
+1:
+	lw t0, (a0)
+ b00:	00052283          	lw	t0,0(a0)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:155
+	sw t0, (a1)
+ b04:	0055a023          	sw	t0,0(a1)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:156
+	addi a0, a0, 4
+ b08:	0511                	addi	a0,a0,4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:157
+	addi a1, a1, 4
+ b0a:	0591                	addi	a1,a1,4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:158
+	bltu a1, a2, 1b
+ b0c:	fec5eae3          	bltu	a1,a2,b00 <handle_reset+0x54>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:161
+2:
+	/* clear bss section */
+	la a0, _sbss
+ b10:	20000517          	auipc	a0,0x20000
+ b14:	fb050513          	addi	a0,a0,-80 # 20000ac0 <_edata>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:162
+	la a1, _ebss
+ b18:	86c18593          	addi	a1,gp,-1940 # 20000b2c <_ebss>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:163
+	bgeu a0, a1, 2f
+ b1c:	00b57763          	bgeu	a0,a1,b2a <handle_reset+0x7e>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:165
+1:
+	sw zero, (a0)
+ b20:	00052023          	sw	zero,0(a0)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:166
+	addi a0, a0, 4
+ b24:	0511                	addi	a0,a0,4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:167
+	bltu a0, a1, 1b
+ b26:	feb56de3          	bltu	a0,a1,b20 <handle_reset+0x74>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:170
+2:
+	/* 流水线控制位 & 动态预测控制位 */
+	li t0, 0x1f
+ b2a:	42fd                	li	t0,31
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:171
+	csrw 0xbc0, t0
+ b2c:	bc029073          	csrw	0xbc0,t0
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:173
+	/* 打开嵌套中断、硬件压栈功能 */
+	li t0, 0x3
+ b30:	428d                	li	t0,3
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:174
+	csrw 0x804, t0
+ b32:	80429073          	csrw	0x804,t0
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:176
+	
+    li t0, 0x88
+ b36:	08800293          	li	t0,136
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:177
+    csrw mstatus, t0
+ b3a:	30029073          	csrw	mstatus,t0
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:178
+	la t0, _vector_base
+ b3e:	1ffff297          	auipc	t0,0x1ffff
+ b42:	4c228293          	addi	t0,t0,1218 # 20000000 <_highcode_vma_start>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:181
+
+	/* 配置向量表模式为绝对地址模式 */
+    ori t0, t0, 3
+ b46:	0032e293          	ori	t0,t0,3
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:182
+	csrw mtvec, t0
+ b4a:	30529073          	csrw	mtvec,t0
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:184
+
+    lui a4,0x40001
+ b4e:	40001737          	lui	a4,0x40001
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:185
+    li  a5,87
+ b52:	05700793          	li	a5,87
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:186
+    sb  a5,64(a4)
+ b56:	04f70023          	sb	a5,64(a4) # 40001040 <_eusrstack+0x1fff9040>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:187
+    li  a5,-88
+ b5a:	fa800793          	li	a5,-88
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:188
+    sb  a5,64(a4)
+ b5e:	04f70023          	sb	a5,64(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:189
+    fence.i
+ b62:	0000100f          	fence.i
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:190
+    lw  a5,72(a4)
+ b66:	473c                	lw	a5,72(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:191
+    lui a3,0xfa000
+ b68:	fa0006b7          	lui	a3,0xfa000
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:192
+    addi  a3,a3,-8
+ b6c:	16e1                	addi	a3,a3,-8
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:193
+    and a5,a5,a3
+ b6e:	8ff5                	and	a5,a5,a3
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:194
+    lui a3,0x6000
+ b70:	060006b7          	lui	a3,0x6000
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:195
+    addi a3,a3,5
+ b74:	0695                	addi	a3,a3,5
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:196
+    or  a5,a5,a3
+ b76:	8fd5                	or	a5,a5,a3
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:197
+    sw  a5,72(a4)
+ b78:	c73c                	sw	a5,72(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:199
+
+	la t0, main
+ b7a:	00000297          	auipc	t0,0x0
+ b7e:	01028293          	addi	t0,t0,16 # b8a <main>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:200
+	csrw mepc, t0
+ b82:	34129073          	csrw	mepc,t0
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/Startup/startup_CH583.S:203
+	
+	
+	mret
+ b86:	30200073          	mret
+
+00000b8a <main>:
+main():
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:27
+{
+ b8a:	1141                	addi	sp,sp,-16
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:30
+    SetSysClock(CLK_SOURCE_PLL_60MHz);
+ b8c:	04800513          	li	a0,72
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:27
+{
+ b90:	c606                	sw	ra,12(sp)
+ b92:	c422                	sw	s0,8(sp)
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:30
+    SetSysClock(CLK_SOURCE_PLL_60MHz);
+ b94:	1ffff097          	auipc	ra,0x1ffff
+ b98:	598080e7          	jalr	1432(ra) # 2000012c <SetSysClock>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:33
+    GPIOA_SetBits(GPIO_Pin_9);
+ b9c:	40001737          	lui	a4,0x40001
+ ba0:	0a872783          	lw	a5,168(a4) # 400010a8 <_eusrstack+0x1fff90a8>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:34
+    GPIOA_ModeCfg(GPIO_Pin_8, GPIO_ModeIN_PU);      // RXD-配置上拉输入
+ ba4:	4585                	li	a1,1
+ ba6:	10000513          	li	a0,256
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:33
+    GPIOA_SetBits(GPIO_Pin_9);
+ baa:	2007e793          	ori	a5,a5,512
+ bae:	0af72423          	sw	a5,168(a4)
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:34
+    GPIOA_ModeCfg(GPIO_Pin_8, GPIO_ModeIN_PU);      // RXD-配置上拉输入
+ bb2:	2805                	jal	be2 <GPIOA_ModeCfg>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:35
+    GPIOA_ModeCfg(GPIO_Pin_9, GPIO_ModeOut_PP_5mA); // TXD-配置推挽输出，注意先让IO口输出高电平
+ bb4:	458d                	li	a1,3
+ bb6:	20000513          	li	a0,512
+ bba:	2025                	jal	be2 <GPIOA_ModeCfg>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:36
+    UART1_DefInit();
+ bbc:	2a3d                	jal	cfa <UART1_DefInit>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:39
+    UART1_SendString(TxBuff, sizeof(TxBuff));
+ bbe:	45d1                	li	a1,20
+ bc0:	20000517          	auipc	a0,0x20000
+ bc4:	ee850513          	addi	a0,a0,-280 # 20000aa8 <_highcode_vma_end>
+ bc8:	2295                	jal	d2c <UART1_SendString>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:46
+        len = UART1_RecvString(RxBuff);
+ bca:	80818413          	addi	s0,gp,-2040 # 20000ac8 <RxBuff>
+ bce:	80818513          	addi	a0,gp,-2040 # 20000ac8 <RxBuff>
+ bd2:	2249                	jal	d54 <UART1_RecvString>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:47
+        if(len)
+ bd4:	0ff57793          	andi	a5,a0,255
+ bd8:	dbfd                	beqz	a5,bce <main+0x44>
+e:\DuRuofu\Project\fr-ble-light\software\ch582\01-uart\obj/../src/Main.c:49
+            UART1_SendString(RxBuff, len);
+ bda:	85be                	mv	a1,a5
+ bdc:	8522                	mv	a0,s0
+ bde:	22b9                	jal	d2c <UART1_SendString>
+ be0:	b7fd                	j	bce <main+0x44>
+
+00000be2 <GPIOA_ModeCfg>:
+GPIOA_ModeCfg():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:27
+ *
+ * @return  none
+ */
+void GPIOA_ModeCfg(uint32_t pin, GPIOModeTypeDef mode)
+{
+    switch(mode)
+ be2:	4791                	li	a5,4
+ be4:	02b7ee63          	bltu	a5,a1,c20 <GPIOA_ModeCfg+0x3e>
+ be8:	00000717          	auipc	a4,0x0
+ bec:	19870713          	addi	a4,a4,408 # d80 <UART1_RecvString+0x2c>
+ bf0:	058a                	slli	a1,a1,0x2
+ bf2:	95ba                	add	a1,a1,a4
+ bf4:	419c                	lw	a5,0(a1)
+ bf6:	97ba                	add	a5,a5,a4
+ bf8:	8782                	jr	a5
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:30
+    {
+        case GPIO_ModeIN_Floating:
+            R32_PA_PD_DRV &= ~pin;
+ bfa:	400017b7          	lui	a5,0x40001
+ bfe:	0b47a703          	lw	a4,180(a5) # 400010b4 <_eusrstack+0x1fff90b4>
+ c02:	fff54513          	not	a0,a0
+ c06:	8f69                	and	a4,a4,a0
+ c08:	0ae7aa23          	sw	a4,180(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:31
+            R32_PA_PU &= ~pin;
+ c0c:	0b07a703          	lw	a4,176(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:43
+            R32_PA_DIR &= ~pin;
+            break;
+
+        case GPIO_ModeIN_PD:
+            R32_PA_PD_DRV |= pin;
+            R32_PA_PU &= ~pin;
+ c10:	8f69                	and	a4,a4,a0
+ c12:	0ae7a823          	sw	a4,176(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:44
+            R32_PA_DIR &= ~pin;
+ c16:	0a07a703          	lw	a4,160(a5)
+ c1a:	8d79                	and	a0,a0,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:54
+            R32_PA_DIR |= pin;
+            break;
+
+        case GPIO_ModeOut_PP_20mA:
+            R32_PA_PD_DRV |= pin;
+            R32_PA_DIR |= pin;
+ c1c:	0aa7a023          	sw	a0,160(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:60
+            break;
+
+        default:
+            break;
+    }
+}
+ c20:	8082                	ret
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:36
+            R32_PA_PD_DRV &= ~pin;
+ c22:	400017b7          	lui	a5,0x40001
+ c26:	0b47a683          	lw	a3,180(a5) # 400010b4 <_eusrstack+0x1fff90b4>
+ c2a:	fff54713          	not	a4,a0
+ c2e:	8ef9                	and	a3,a3,a4
+ c30:	0ad7aa23          	sw	a3,180(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:37
+            R32_PA_PU |= pin;
+ c34:	0b07a683          	lw	a3,176(a5)
+ c38:	8d55                	or	a0,a0,a3
+ c3a:	0aa7a823          	sw	a0,176(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:38
+            R32_PA_DIR &= ~pin;
+ c3e:	0a07a683          	lw	a3,160(a5)
+ c42:	8f75                	and	a4,a4,a3
+ c44:	0ae7a023          	sw	a4,160(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:39
+            break;
+ c48:	8082                	ret
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:42
+            R32_PA_PD_DRV |= pin;
+ c4a:	400017b7          	lui	a5,0x40001
+ c4e:	0b47a703          	lw	a4,180(a5) # 400010b4 <_eusrstack+0x1fff90b4>
+ c52:	8f49                	or	a4,a4,a0
+ c54:	0ae7aa23          	sw	a4,180(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:43
+            R32_PA_PU &= ~pin;
+ c58:	0b07a703          	lw	a4,176(a5)
+ c5c:	fff54513          	not	a0,a0
+ c60:	bf45                	j	c10 <GPIOA_ModeCfg+0x2e>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:48
+            R32_PA_PD_DRV &= ~pin;
+ c62:	400017b7          	lui	a5,0x40001
+ c66:	0b47a683          	lw	a3,180(a5) # 400010b4 <_eusrstack+0x1fff90b4>
+ c6a:	fff54713          	not	a4,a0
+ c6e:	8f75                	and	a4,a4,a3
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:53
+            R32_PA_PD_DRV |= pin;
+ c70:	0ae7aa23          	sw	a4,180(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:54
+            R32_PA_DIR |= pin;
+ c74:	0a07a703          	lw	a4,160(a5)
+ c78:	8d59                	or	a0,a0,a4
+ c7a:	b74d                	j	c1c <GPIOA_ModeCfg+0x3a>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_gpio.c:53
+            R32_PA_PD_DRV |= pin;
+ c7c:	400017b7          	lui	a5,0x40001
+ c80:	0b47a703          	lw	a4,180(a5) # 400010b4 <_eusrstack+0x1fff90b4>
+ c84:	8f49                	or	a4,a4,a0
+ c86:	b7ed                	j	c70 <GPIOA_ModeCfg+0x8e>
+
+00000c88 <GetSysClock>:
+GetSysClock():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:117
+    rev = R16_CLK_SYS_CFG & 0xff;
+ c88:	400017b7          	lui	a5,0x40001
+ c8c:	0087d503          	lhu	a0,8(a5) # 40001008 <_eusrstack+0x1fff9008>
+ c90:	0542                	slli	a0,a0,0x10
+ c92:	8141                	srli	a0,a0,0x10
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:118
+    if((rev & 0x40) == (0 << 6))
+ c94:	04057793          	andi	a5,a0,64
+ c98:	eb91                	bnez	a5,cac <GetSysClock+0x24>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:120
+        return (32000000 / (rev & 0x1f));
+ c9a:	01f57793          	andi	a5,a0,31
+ c9e:	01e85537          	lui	a0,0x1e85
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:124
+        return (480000000 / (rev & 0x1f));
+ ca2:	80050513          	addi	a0,a0,-2048 # 1e84800 <_data_lma+0x1e83a6c>
+ ca6:	02f54533          	div	a0,a0,a5
+ caa:	8082                	ret
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:122
+    else if((rev & RB_CLK_SYS_MOD) == (1 << 6))
+ cac:	0c057793          	andi	a5,a0,192
+ cb0:	04000713          	li	a4,64
+ cb4:	00e79763          	bne	a5,a4,cc2 <GetSysClock+0x3a>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:124
+        return (480000000 / (rev & 0x1f));
+ cb8:	01f57793          	andi	a5,a0,31
+ cbc:	1c9c4537          	lui	a0,0x1c9c4
+ cc0:	b7cd                	j	ca2 <GetSysClock+0x1a>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:128
+        return (32000);
+ cc2:	6521                	lui	a0,0x8
+ cc4:	d0050513          	addi	a0,a0,-768 # 7d00 <_data_lma+0x6f6c>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_sys.c:130
+}
+ cc8:	8082                	ret
+
+00000cca <UART1_BaudRateCfg>:
+UART1_BaudRateCfg():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:43
+ * @param   baudrate    - 波特率
+ *
+ * @return  none
+ */
+void UART1_BaudRateCfg(uint32_t baudrate)
+{
+ cca:	1141                	addi	sp,sp,-16
+ ccc:	c422                	sw	s0,8(sp)
+ cce:	c606                	sw	ra,12(sp)
+ cd0:	842a                	mv	s0,a0
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:46
+    uint32_t x;
+
+    x = 10 * GetSysClock() / 8 / baudrate;
+ cd2:	3f5d                	jal	c88 <GetSysClock>
+ cd4:	4729                	li	a4,10
+ cd6:	02e507b3          	mul	a5,a0,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:49
+    x = (x + 5) / 10;
+    R16_UART1_DL = (uint16_t)x;
+}
+ cda:	40b2                	lw	ra,12(sp)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:46
+    x = 10 * GetSysClock() / 8 / baudrate;
+ cdc:	838d                	srli	a5,a5,0x3
+ cde:	0287d7b3          	divu	a5,a5,s0
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:49
+}
+ ce2:	4422                	lw	s0,8(sp)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:47
+    x = (x + 5) / 10;
+ ce4:	0795                	addi	a5,a5,5
+ ce6:	02e7d7b3          	divu	a5,a5,a4
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:48
+    R16_UART1_DL = (uint16_t)x;
+ cea:	40003737          	lui	a4,0x40003
+ cee:	07c2                	slli	a5,a5,0x10
+ cf0:	83c1                	srli	a5,a5,0x10
+ cf2:	40f71623          	sh	a5,1036(a4) # 4000340c <_eusrstack+0x1fffb40c>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:49
+}
+ cf6:	0141                	addi	sp,sp,16
+ cf8:	8082                	ret
+
+00000cfa <UART1_DefInit>:
+UART1_DefInit():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:26
+    UART1_BaudRateCfg(115200);
+ cfa:	6571                	lui	a0,0x1c
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:25
+{
+ cfc:	1141                	addi	sp,sp,-16
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:26
+    UART1_BaudRateCfg(115200);
+ cfe:	20050513          	addi	a0,a0,512 # 1c200 <_data_lma+0x1b46c>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:25
+{
+ d02:	c606                	sw	ra,12(sp)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:26
+    UART1_BaudRateCfg(115200);
+ d04:	37d9                	jal	cca <UART1_BaudRateCfg>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:27
+    R8_UART1_FCR = (2 << 6) | RB_FCR_TX_FIFO_CLR | RB_FCR_RX_FIFO_CLR | RB_FCR_FIFO_EN; // FIFO打开，触发点4字节
+ d06:	400037b7          	lui	a5,0x40003
+ d0a:	f8700713          	li	a4,-121
+ d0e:	40e78123          	sb	a4,1026(a5) # 40003402 <_eusrstack+0x1fffb402>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:28
+    R8_UART1_LCR = RB_LCR_WORD_SZ;
+ d12:	470d                	li	a4,3
+ d14:	40e781a3          	sb	a4,1027(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:29
+    R8_UART1_IER = RB_IER_TXD_EN;
+ d18:	04000713          	li	a4,64
+ d1c:	40e780a3          	sb	a4,1025(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:30
+    R8_UART1_DIV = 1;
+ d20:	4705                	li	a4,1
+ d22:	40e78723          	sb	a4,1038(a5)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:31
+}
+ d26:	40b2                	lw	ra,12(sp)
+ d28:	0141                	addi	sp,sp,16
+ d2a:	8082                	ret
+
+00000d2c <UART1_SendString>:
+UART1_SendString():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:122
+{
+    uint16_t len = l;
+
+    while(len)
+    {
+        if(R8_UART1_TFC != UART_FIFO_SIZE)
+ d2c:	400037b7          	lui	a5,0x40003
+ d30:	4721                	li	a4,8
+ d32:	400036b7          	lui	a3,0x40003
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:120
+    while(len)
+ d36:	e191                	bnez	a1,d3a <UART1_SendString+0xe>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:128
+        {
+            R8_UART1_THR = *buf++;
+            len--;
+        }
+    }
+}
+ d38:	8082                	ret
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:122
+        if(R8_UART1_TFC != UART_FIFO_SIZE)
+ d3a:	40b7c603          	lbu	a2,1035(a5) # 4000340b <_eusrstack+0x1fffb40b>
+ d3e:	fec70ce3          	beq	a4,a2,d36 <UART1_SendString+0xa>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:124
+            R8_UART1_THR = *buf++;
+ d42:	0505                	addi	a0,a0,1
+ d44:	fff54603          	lbu	a2,-1(a0)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:125
+            len--;
+ d48:	15fd                	addi	a1,a1,-1
+ d4a:	05c2                	slli	a1,a1,0x10
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:124
+            R8_UART1_THR = *buf++;
+ d4c:	40c68423          	sb	a2,1032(a3) # 40003408 <_eusrstack+0x1fffb408>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:125
+            len--;
+ d50:	81c1                	srli	a1,a1,0x10
+ d52:	b7d5                	j	d36 <UART1_SendString+0xa>
+
+00000d54 <UART1_RecvString>:
+UART1_RecvString():
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:143
+ */
+uint16_t UART1_RecvString(uint8_t *buf)
+{
+    uint16_t len = 0;
+
+    while(R8_UART1_RFC)
+ d54:	4781                	li	a5,0
+ d56:	400036b7          	lui	a3,0x40003
+ d5a:	40a6c703          	lbu	a4,1034(a3) # 4000340a <_eusrstack+0x1fffb40a>
+ d5e:	01079613          	slli	a2,a5,0x10
+ d62:	8241                	srli	a2,a2,0x10
+ d64:	0ff77713          	andi	a4,a4,255
+ d68:	e319                	bnez	a4,d6e <UART1_RecvString+0x1a>
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:150
+        *buf++ = R8_UART1_RBR;
+        len++;
+    }
+
+    return (len);
+}
+ d6a:	8532                	mv	a0,a2
+ d6c:	8082                	ret
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:145
+        *buf++ = R8_UART1_RBR;
+ d6e:	4086c603          	lbu	a2,1032(a3)
+ d72:	00f50733          	add	a4,a0,a5
+ d76:	0785                	addi	a5,a5,1
+ d78:	00c70023          	sb	a2,0(a4)
+e:/DuRuofu/Project/fr-ble-light/software/ch582/SRC/StdPeriphDriver/CH58x_uart1.c:146
+        len++;
+ d7c:	bff9                	j	d5a <UART1_RecvString+0x6>
+ d7e:	0000                	unimp
+ d80:	fe7a                	fsw	ft10,60(sp)
+ d82:	ffff                	0xffff
+ d84:	fea2                	fsw	fs0,124(sp)
+ d86:	ffff                	0xffff
+ d88:	feca                	fsw	fs2,124(sp)
+ d8a:	ffff                	0xffff
+ d8c:	fee2                	fsw	fs8,124(sp)
+ d8e:	ffff                	0xffff
+ d90:	fefc                	fsw	fa5,124(a3)
+ d92:	ffff                	0xffff
